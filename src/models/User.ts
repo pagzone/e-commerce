@@ -1,16 +1,22 @@
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
 export interface IUser extends Document {
+  _id: string;
   username: string;
   email: string;
   name: string;
   hashedPassword: string;
+  isEmailVerified: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const UserSchema: Schema<IUser> = new Schema(
   {
+    _id: {
+      type: String,
+      required: [true, 'Please provide a name'],
+    },
     username: {
       type: String,
       required: [true, 'Please provide a name'],
@@ -30,9 +36,14 @@ const UserSchema: Schema<IUser> = new Schema(
       type: String,
       required: [true, 'Please provide a password'],
     },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    }
   },
   {
     timestamps: true,
+    _id: false,
   }
 );
 
