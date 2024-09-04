@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push"
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.0",
@@ -20,8 +22,8 @@
     "dotenv": "^16.4.5",
     "lucide-react": "^0.438.0",
     "mongodb": "^6.8.0",
+    "mongoose": "^8.6.1",
     "next": "14.2.7",
-    "prisma": "^5.19.1",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.2",
