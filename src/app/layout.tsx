@@ -1,10 +1,11 @@
-import Header from "@/components/Header";
+import Header from "@/components/layouts/Header";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lora, Raleway } from "next/font/google";
 import { TRPCProvider } from "./_trpc/Provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
+const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: { default: "PAGZONE", template: "%s | PAGZONE" },
@@ -37,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <TRPCProvider>
           <Header />
           {children}

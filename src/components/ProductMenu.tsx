@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import Link from "next/link";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,66 +10,68 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
-
-const list : { title: string; href: string; description: string  }[] = [
+const list: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
     href: "/",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
-]
+];
 
 const navigationBar = [
-{
-  title: "Shops",
-  shopList : list,
-},
-{
-  title: "Cellphones",
-  shopList : list,
-},
-{
-  title: "Accessories",
-  shopList : list,
-},
-{
-  title: "Laptops",
-  shopList : list,
-},
-{
-  title: "Watch",
-  shopList : list,
-}
-]
+  {
+    title: "Shops",
+    shopList: list,
+  },
+  {
+    title: "Cellphones",
+    shopList: list,
+  },
+  {
+    title: "Accessories",
+    shopList: list,
+  },
+  {
+    title: "Laptops",
+    shopList: list,
+  },
+  {
+    title: "Watch",
+    shopList: list,
+  },
+];
 
 export function ProductMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {navigationBar.map((component)=> (
+        {navigationBar.map((component) => (
           <NavigationMenuItem key={component.title}>
-            <NavigationMenuTrigger>{component.title}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {component.shopList.map((list) => (
-                    <ListItem
-                      key={list.title}
-                      title={list.title}
-                      href={list.href}
-                    >
-                      {list.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-           </NavigationMenuItem>
+            <NavigationMenuTrigger className="font-semibold">
+              {component.title}
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {component.shopList.map((list) => (
+                  <ListItem
+                    key={list.title}
+                    title={list.title}
+                    href={list.href}
+                  >
+                    {list.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
         ))}
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -80,10 +81,10 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <Link 
+        <Link
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 p-3 rounded-md leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
@@ -95,6 +96,6 @@ const ListItem = React.forwardRef<
         </Link>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";
