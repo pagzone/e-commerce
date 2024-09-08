@@ -7,13 +7,13 @@ import Link from 'next/link';
 import { useState, useMemo } from 'react';
 
 const Header = () => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const logo = useMemo(() => (
     <Image src="/pagzone-ecommerce-logo.png"
-           width={70}
-           height={70}
+           width={50}
+           height={50}
            alt="Picture of the author" />    
     ), []);
 
@@ -48,7 +48,7 @@ const Header = () => {
   return (
     <header className="flex flex-col h-16 md:h-28 px-4 md:mx-[75px]">
       {/* Mobile Header */}
-      <div className="flex justify-between items-center py-4 px-1 md:hidden">
+      <div className="flex justify-between items-center py-6 px-1 md:hidden">
 
         <div className={`flex justify-center ${isAuth ? 'gap-x-6' : 'gap-x-8'} `}>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
@@ -88,7 +88,7 @@ const Header = () => {
       </div>
 
       {/* Desktop Header */}
-      <div className="hidden md:flex items-center justify-between pt-4 px-2 md:px-6">
+      <div className="hidden md:flex items-center justify-between py-4 border-b-[1px]">
         <div className="flex items-center">
           {logo}
           <h1 className="font-lora font-medium text-xl">PAGZONE</h1>
@@ -118,7 +118,7 @@ const Header = () => {
       )}
 
       {/* Product Navbar for Desktop */}
-      <nav className="hidden md:flex flex-col gap-2 pl-6">
+      <nav className="hidden md:flex flex-col gap-2 mt-2 ">
         <ProductMenu />
       </nav>
     </header>
