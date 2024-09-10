@@ -38,8 +38,8 @@ const featuredProduct = [
     >
       <CarouselContent> 
         {featuredProduct.map((value,index) => (
-          <CarouselItem key={index}>
-            <Card className={`relative h-96 flex justify-end items-center md:bg-right bg-fit bg-no-repeat rounded-md`}
+          <CarouselItem key={index} className="h-96">
+            <Card className={`relative h-full flex justify-end items-center md:bg-right bg-fit bg-no-repeat rounded-md`}
               style={{ backgroundImage: `url(${value.productImage})` }} 
             >
               <CardContent className="absolute left-0 flex flex-col gap-y-4 p-4">

@@ -7,6 +7,21 @@ import Link from 'next/link';
 import React from 'react';
 import { useState, useMemo } from 'react';
 
+const authIcons = [
+  { 
+    icon :  'ShoppingBag',
+    href : '/'
+  },
+  { 
+    icon :  'Bell',
+    href : '/'
+  },
+  { 
+    icon :  'CircleUser',
+    href : '/'
+  }
+]
+
 const Header = () => {
   const [isAuth, setIsAuth] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -17,9 +32,9 @@ const Header = () => {
 
   const authLinks = useMemo(() => isAuth ? (
     <div className="flex items-center gap-3.5">
-      {['ShoppingBag', 'Bell', 'CircleUser'].map((icon, i) => (
-        <Link href="/" key={i} className="relative">
-          {React.createElement(icon === 'ShoppingBag' ? ShoppingBag : icon === 'Bell' ? Bell : CircleUser, { size: 27 })}
+      {authIcons.map((value, i) => (
+        <Link href={value.href} key={i} className="relative">
+          {React.createElement(value.icon === 'ShoppingBag' ? ShoppingBag : value.icon === 'Bell' ? Bell : CircleUser, { size: 27 })}
           {i < 2 && <span className="absolute top-0 right-0 bg-blue-500 rounded-full w-3.5 h-3.5 text-[11px] text-center">1</span>}
         </Link>
       ))}
@@ -31,14 +46,14 @@ const Header = () => {
   ), [isAuth]);
 
   return (
-    <header className="flex flex-col h-16 md:h-28 px-4 md:mx-[75px]">
+    <header className="flex flex-col h-16 md:h-28 px-4 ">
       {/* Mobile Header */}
       <div className="flex justify-between items-center py-6 px-1 md:hidden">
         <div className={`flex justify-center ${isAuth ? 'gap-x-6' : 'gap-x-8'}`}>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-          <Link href="/"><CircleUser size={27} /></Link>
+          <Link href="/"><CircleUser size={27} /></Link> 
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">{logo}</div>
         <div className={`flex items-center ${isAuth ? 'gap-x-4' : 'gap-8'}`}>
