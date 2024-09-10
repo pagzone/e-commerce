@@ -64,6 +64,8 @@
     @apply border-border;
   }
   body {
+    @apply font-raleway;
+    @apply flex flex-col gap-y-12;
     @apply bg-background text-foreground;
   }
 }
