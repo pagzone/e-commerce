@@ -1,4 +1,3 @@
-import Header from "@/components/layouts/Header";
 import type { Metadata } from "next";
 import { Lora, Raleway } from "next/font/google";
 import { TRPCProvider } from "./_trpc/Provider";
@@ -41,7 +40,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <TRPCProvider>
-          <Header />
           {children}
         </TRPCProvider>
       </body>
