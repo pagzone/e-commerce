@@ -1,7 +1,7 @@
 import FeaturedProducts from "@/components/FeaturedProducts";
+import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
-import Header from "@/components/Header";
 
 const products = [
   {
