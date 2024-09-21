@@ -22,12 +22,12 @@ const ProductCard = ({ productImg, productName, productPrice, productType }: Pro
   return (
     <Card
       className={cn(
-        "w-[260px] h-[340px] rounded-md shadow-md overflow-hidden cursor-pointer",
+        "w-[190px] h-[250px] rounded-md shadow-md overflow-hidden cursor-pointer",
         "transition-transform duration-300 hover:scale-105 hover:shadow-xl",
         "max-md:w-[150px] max-md:h-[220px]"
       )}
     >
-      <CardHeader className="h-48 max-md:h-28 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+      <CardHeader className="h-36 max-md:h-28 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
         <Image
           src={productImg}
           alt={productName}
@@ -37,16 +37,16 @@ const ProductCard = ({ productImg, productName, productPrice, productType }: Pro
         />
       </CardHeader>
 
-      <CardContent className="py-4 px-6 max-md:p-2 flex flex-col justify-evenly h-[150px] max-md:h-24">
+      <CardContent className="py-2 px-4 max-md:p-2 flex flex-col justify-evenly h-[100px] max-md:h-24 ">
         <div>
-          <CardTitle className="text-xl max-md:text-sm font-semibold text-gray-800 leading-tight truncate">
+          <CardTitle className="text-base max-md:text-sm font-semibold text-gray-800 leading-tight truncate">
             {productName}
           </CardTitle>
-          <p className="text-sm max-md:text-[0.70rem] text-gray-500">
+          <p className="text-xs max-md:text-[0.70rem] text-gray-500">
             {productType}
           </p>
         </div>
-        <CardDescription className="text-xl max-md:text-sm font-bold text-emerald-500 ">
+        <CardDescription className="text-base max-md:text-sm font-bold text-emerald-500 ">
           {productPrice}
         </CardDescription>
       </CardContent>

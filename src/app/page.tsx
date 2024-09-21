@@ -42,8 +42,6 @@ const products = [
   },
 ];
 
-
-
 export default function Home() {
   return (
      <div className="h-screen flex flex-col gap-y-12 md:mx-[75px] px-6">
@@ -58,7 +56,9 @@ export default function Home() {
              <Link href='/' className="hover:underline">See all</Link>
           </div>
            
-            <div className="flex flex-wrap gap-y-6 gap-x-12  max-md:gap-x-2 py-2 max-sm::justify-center">
+            <div className="flex flex-wrap gap-y-6 py-2 justify-between
+             max-sm::justify-center
+            ">
               {products.map((value, index) => (
                   <ProductCard
                     key={index}
