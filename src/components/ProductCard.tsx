@@ -2,13 +2,13 @@
 
 import {
   Card,
-  CardHeader,
   CardContent,
   CardDescription,
+  CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
+import { cn } from "@/db/lib/utils";
 import Image from "next/image";
-import { cn } from "@/lib/utils"
 
 type ProductProps = {
   productImg: string;
