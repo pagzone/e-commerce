@@ -22,14 +22,13 @@ const authIcons = [
 ]
 
 const Header = () => {
-  const [isAuth, setIsAuth] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const logo = useMemo(() => (
     <Image src="/pagzone-ecommerce-logo.png" width={50} height={50} alt="Logo" />
   ), []);
 
-  const authLinks = useMemo(() => isAuth ? (
+  const authLinks = useMemo(() =>
     <div className="flex items-center gap-3.5">
       {authIcons.map((value, i) => (
         <Link href={value.href} key={i} className="relative">
@@ -38,24 +37,20 @@ const Header = () => {
         </Link>
       ))}
     </div>
-  ) : (
-    <div className="flex gap-x-2 text-sm">
-      <Link href="/user/login" className="hover:underline">Sign in</Link> | <Link href="/user/register" className="hover:underline">Sign up</Link>
-    </div>
-  ), [isAuth]);
+ , []);
 
   return (
     <header className="flex flex-col h-16 md:h-28 px-4 ">
       {/* Mobile Header */}
       <div className="flex justify-between items-center py-6 px-1 md:hidden">
-        <div className={`flex justify-center ${isAuth ? 'gap-x-6' : 'gap-x-8'}`}>
+        <div className="flex justify-center gap-x-8 ">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
           <Link href="/"><CircleUser size={27} /></Link> 
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">{logo}</div>
-        <div className={`flex items-center ${isAuth ? 'gap-x-4' : 'gap-8'}`}>
+        <div className="flex items-center gap-x-8">
           <Link href="/"><Search size={27} /></Link>
           <Link href="/" className="relative"><ShoppingBag size={27} /><span className="absolute top-0 right-0 bg-blue-500 rounded-full w-3.5 h-3.5 text-white text-[11px]">0</span></Link>
         </div>
