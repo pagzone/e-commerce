@@ -1,8 +1,9 @@
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 import type { Metadata } from "next";
 import { Lora, Raleway } from "next/font/google";
 import { TRPCProvider } from "./_trpc/Provider";
 import "./globals.css";
-
 
 const raleway = Raleway({ subsets: ["latin"] });
 const lora = Lora({ subsets: ["latin"] });
@@ -40,7 +41,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <TRPCProvider>
+         <Header/>
           {children}
+          <Footer/>
         </TRPCProvider>
       </body>
     </html>

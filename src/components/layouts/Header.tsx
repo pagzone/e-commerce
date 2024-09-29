@@ -17,7 +17,7 @@ const authIcons = [
   },
   { 
     icon :  'CircleUser',
-    href : '/'
+    href : '/user/login'
   }
 ]
 
@@ -40,7 +40,7 @@ const Header = () => {
  , []);
 
   return (
-    <header className="flex flex-col h-16 md:h-28 px-4 ">
+    <header className="flex flex-col h-16 md:h-28 px-4">
       {/* Mobile Header */}
       <div className="flex justify-between items-center py-6 px-1 md:hidden">
         <div className="flex justify-center gap-x-8 ">
