@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Card,
@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cn } from "@/db/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type ProductProps = {
@@ -15,10 +15,14 @@ type ProductProps = {
   productName: string;
   productPrice: string;
   productType: string;
-}
+};
 
-const ProductCard = ({ productImg, productName, productPrice, productType }: ProductProps) => {
-
+const ProductCard = ({
+  productImg,
+  productName,
+  productPrice,
+  productType,
+}: ProductProps) => {
   return (
     <Card
       className={cn(
@@ -52,6 +56,6 @@ const ProductCard = ({ productImg, productName, productPrice, productType }: Pro
       </CardContent>
     </Card>
   );
-}
+};
 
 export default ProductCard;
