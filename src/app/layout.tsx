@@ -1,15 +1,15 @@
 import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 import type { Metadata } from "next";
-import { Lora, Raleway } from "next/font/google";
+import { Lora, Poppins } from "next/font/google";
 import { TRPCProvider } from "./_trpc/Provider";
 import "./globals.css";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400", "700"], subsets: ["latin"] });
 const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "PAGZONE", template: "%s | PAGZONE" },
+  title: { default: "Pagzone", template: "%s | Pagzone" },
   description: "An e-commerce platform for tech enthusiasts",
   authors: [
     { name: "Pagzone", url: "https://github.com/pagzone" },
@@ -39,11 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={raleway.className}>
+      <body className={poppins.className}>
         <TRPCProvider>
-         <Header/>
+          <Header />
           {children}
-          <Footer/>
+          <Footer />
         </TRPCProvider>
       </body>
     </html>

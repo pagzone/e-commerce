@@ -10,7 +10,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'raleway': ['Raleway', 'sans-serif'],
+				// 'raleway': ['Raleway', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 				'lora': ['Lora', 'serif'],
 			},
 			backgroundImage: {
